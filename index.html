@@ -62,7 +62,26 @@
 		}
 
 		body {
-			background: rgba(20%,20%,20%,0.1);
+			background:
+			
+			    linear-gradient(top,rgba(255,255,255,0.5),
+		
+			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
+		
+			background:
+		
+			    -moz-linear-gradient(top,rgba(255,255,255,0.5),
+		
+			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
+		
+			background:
+		
+			    -webkit-linear-gradient(top,rgba(255,255,255,0.5),
+		
+			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
+
+			background-size: cover;
+			background-attachment:fixed;
 		}
 
 		footer {
@@ -79,6 +98,10 @@
 			width:500px;
 			border-bottom:2px solid black;
 			background-color: white;
+		}
+
+		ul {
+			list-style-type: none;
 		}
 
 		/*=================menu設定===================*/
