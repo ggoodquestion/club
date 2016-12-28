@@ -3,16 +3,29 @@
 <head>
 	<link rel="stylesheet" href="css\main.css">
 	<meta charset="UTF-8">
-	<script src="js\jquery-3.1.0.min.js"></script>	
+	<script src="js\jquery-3.1.0.min.js"></script>
 	<title>松山資研</title>
 </head>
 <body>
 	<div class="background">
-		<div id="login">login</div>
+		<div id="login">
+			{% if request.user.is_authenticated %}
+				<p>
+					用戶: {{ request.user }}
+					<a href="/accounts/logout/">登出</a>
+				</p>
+			{% else %}
+				<p>
+					<a href="/accounts/login/">登入</a>
+					|
+					<a href="/accounts/register/">註冊</a>
+				</p>
+			{% endif %}
+		</div>
 		<div id="menu">
 			<ul>
 				<li></li>
-				<li><a href="#">首頁</a></li>
+				<li><a href="/index/">首頁</a></li>
 				<li><a href="#">關於我們</a></li>
 				<li><a href="#">公告事項</a></li>
 				<li><a href="#">社課相關</a></li>
@@ -30,8 +43,11 @@
 	</div>
 
 	<div id="ad">
-		<img src="ad/pic1.png" alt="123"><br>
-		<section>S S I n R C</section>
+		<img src="https://github.com/jeff3071/club/blob/gh-pages/ad/pic1.png?raw=true" alt="123"><br>
+		<section><pre>S S I n R C{% if request.user.is_authenticated %}        歡迎回來	{% else %}   還沒有帳號媽? ~ <a href="/accounts/register/">還不註冊</a>
+			{% endif %}
+				</pre>
+		</section>
 	</div>
 
 	<div id="main">
@@ -50,7 +66,7 @@
 		</ul>
 	</div>
 
-	<footer>◎2016 Design:jeff<footer>
+	<footer>&copy;2016 Design:jeff<footer>
 
 	<style>
 		* {
@@ -64,30 +80,30 @@
 
 		body {
 			background:
-			
+
 			    linear-gradient(top,rgba(255,255,255,0.5),
-		
-			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
-		
+
+			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;
+
 			background:
-		
+
 			    -moz-linear-gradient(top,rgba(255,255,255,0.5),
-		
-			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
-		
+
+			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;
+
 			background:
-		
+
 			    -webkit-linear-gradient(top,rgba(255,255,255,0.5),
-		
-			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
+
+			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;
 
 			background-size: cover;
 			background-attachment:fixed;
 		}
 
 		footer {
-			font-size: 10px;
-			color: black;
+			font-size: 35px;
+			color: white;
 			text-align: center;
 			clear: both;
 			margin-bottom: 0;
@@ -155,9 +171,9 @@
 				border-top:2px solid #999;
 			}
 		/*=================menu設定===================*/
-		
+
 		/*=================menu2設定===================*/
-		
+
 		#menu2 a {
 			display: block;
 			text-align: center;
@@ -171,7 +187,7 @@
 		/*=================menu2設定===================*/
 
 		/*=================main設定===================*/
-		
+
 		#main {
 			background-color: white;
 			display: block;
@@ -181,7 +197,7 @@
 			margin-bottom: 5%;
 			border-radius: 1%;
 		}
-		
+
 		#main ul {
 			display: block;
 			margin: 0 auto;
@@ -202,7 +218,7 @@
 		/*=================main設定===================*/
 
 		/*=================ad設定===================*/
-		
+
 		#ad img {
 			padding-top: 3%;
 			width: 100%;
@@ -217,7 +233,7 @@
 			font-size: 32px;
 			padding-top: 10px;
 		}
-	
+
 
 		/*=================ad設定===================*/
 
