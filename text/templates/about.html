@@ -25,10 +25,10 @@
 		<div id="menu">
 			<ul>
 				<li></li>
-				<li><a href="index.html">首頁</a></li>
-				<li><a href="about.html">關於我們</a></li>
-				<li><a href="declare.html">公告事項</a></li>
-				<li><a href="class.html">社課相關</a></li>
+				<li><a href="/index/">首頁</a></li>
+				<li><a href="/about/">關於我們</a></li>
+				<li><a href="/declare/">公告事項</a></li>
+				<li><a href="/class/">社課相關</a></li>
 				<li></li>
 			</ul>
 		</div>
@@ -39,7 +39,7 @@
 	</div>
 
 	<div id="menu2" class="background">
-		<a href="https://www.facebook.com/ssinrc27/?ref=bookmarks">｜粉絲團連結｜</a>
+		<a href="https://www.facebook.com/ssinrc27/?ref=bookmarks" target="_blank">｜粉絲團連結｜</a>
 	</div>
 
 	<div id="ad">
@@ -51,19 +51,14 @@
 	</div>
 
 	<div id="main">
-		<ul>
-			<li>社長：　蔡承哲</li>
-			<li>副社：　林育暘</li>
-			<li>公活：　姚佳宏</li>
-			<li>教學長：歐陽詮</li>
-			<li>教學：　陳建崴</li>
-			<li>美宣長：陳彥伶</li>
-			<li>美宣：　林育暘</li>
-			<li>網管：　陳瀚心</li>
-			<li>場器：　邱柏文</li>
-			<li>總務：　蘇家駒</li>
-			<li>文書：　邱祥慈 </li>
-		</ul>
+		<section>
+			關於我們
+		</section>
+		<section>
+			{% for a in aboutxt %}
+				<p>{{ a.txt }}</p>
+			{% endfor %}
+		</section>
 	</div>
 
 	<footer>&copy;2016 Design:jeff<footer>
@@ -79,7 +74,7 @@
 		}
 
 		body {
-						background:
+		/*	background:
 
 			    linear-gradient(top,rgba(255,255,255,1),
 
@@ -96,7 +91,8 @@
 			    -webkit-linear-gradient(top,rgba(255,255,255,1),
 
 			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
-/*			background:
+					*/
+			background:
 
 			    linear-gradient(top,rgba(255,255,255,0.5),
 
@@ -112,7 +108,7 @@
 
 			    -webkit-linear-gradient(top,rgba(255,255,255,0.5),
 
-			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;*/
+			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;
 
 			background-size: cover;
 			background-attachment:fixed;
@@ -218,21 +214,15 @@
 
 		}
 
-		#main ul {
+		#main section {
+			padding: 3%;
 			display: block;
 			margin: 0 auto;
+			margin-top: 5%;
+			font-size: 40px;
+			font-weight: bold;
+			color: #666;
 		}
-
-			#main > ul > li {
-				margin-top: 7%;
-				padding-bottom: 5%;
-				color: #777;
-				text-align: center;
-			}
-
-			#main > ul > li:first-child {
-				padding-top: 7%;
-			}
 
 
 		/*=================main設定===================*/

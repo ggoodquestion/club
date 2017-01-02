@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>註冊你的帳號吧!</h1>
+
+    <form action="" method="post">
+    	{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="註冊">
+    </form>
+
+    <style>
+		html {
+	      background:
+
+	          linear-gradient(top,rgba(10,100,255,0.5),
+
+	          rgba(10,255,255,0)) center bottom no-repeat;
+
+	      background:
+
+	          -moz-linear-gradient(top,rgba(10,100,255,0.5),
+
+	          rgba(10,255,255,0)) center bottom no-repeat;
+
+	      background:
+
+	          -webkit-linear-gradient(top,rgba(10,100,255,0.5),
+
+	          rgba(10,255,255,0)) center bottom no-repeat;
+
+	      background-size: cover;
+	    }
+
+      form {
+        display: block;
+        margin: 0 auto;
+      }
+
+	      input:before {
+	      	clear: both;
+	      }
+
+    </style>
+</body>
+</html>

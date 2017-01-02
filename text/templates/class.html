@@ -25,10 +25,10 @@
 		<div id="menu">
 			<ul>
 				<li></li>
-				<li><a href="index.html">首頁</a></li>
-				<li><a href="about.html">關於我們</a></li>
-				<li><a href="declare.html">公告事項</a></li>
-				<li><a href="class.html">社課相關</a></li>
+				<li><a href="/index/">首頁</a></li>
+				<li><a href="/about/">關於我們</a></li>
+				<li><a href="/declare/">公告事項</a></li>
+				<li><a href="/class/">社課相關</a></li>
 				<li></li>
 			</ul>
 		</div>
@@ -39,7 +39,7 @@
 	</div>
 
 	<div id="menu2" class="background">
-		<a href="https://www.facebook.com/ssinrc27/?ref=bookmarks">｜粉絲團連結｜</a>
+		<a href="https://www.facebook.com/ssinrc27/?ref=bookmarks" target="_blank">｜粉絲團連結｜</a>
 	</div>
 
 	<div id="ad">
@@ -52,8 +52,15 @@
 
 	<div id="main">
 		<section>
-			公告事項
+			社課相關
 		</section>
+		{% for c in classtxt %}
+			<section>
+				<h2>{{ c.title }}</h2>
+				<br>
+				{{ c.txt }}
+			</section>
+		{% endfor %}
 	</div>
 
 	<footer>&copy;2016 Design:jeff<footer>
@@ -69,7 +76,7 @@
 		}
 
 		body {
-			background:
+			/*background:
 
 			    linear-gradient(top,rgba(255,255,255,1),
 
@@ -86,7 +93,8 @@
 			    -webkit-linear-gradient(top,rgba(255,255,255,1),
 
 			    rgba(255,255,255,0)),url("ad/BG.jpg") center bottom no-repeat;
-/*			background:
+					*/
+			background:
 
 			    linear-gradient(top,rgba(255,255,255,0.5),
 
@@ -102,7 +110,7 @@
 
 			    -webkit-linear-gradient(top,rgba(255,255,255,0.5),
 
-			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;*/
+			    rgba(255,255,255,0)),url("https://github.com/jeff3071/club/blob/gh-pages/ad/BG.jpg?raw=true") center bottom no-repeat;
 
 			background-size: cover;
 			background-attachment:fixed;
@@ -188,7 +196,7 @@
 			text-decoration: none;
 			padding-top: 20px;
 			color: #666;
-			
+
 		}
 
 
@@ -205,6 +213,7 @@
 			margin-bottom: 5%;
 			border-radius: 1%;
 			min-height: 600px;
+
 		}
 
 		#main section {
